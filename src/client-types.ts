@@ -107,8 +107,3 @@ export type Query<T extends FieldData = FieldData> = Partial<{
 }> & {
   omit?: boolean;
 };
-
-export type File = {
-  name: string;
-  buffer: Buffer;
-};

@@ -1,10 +1,24 @@
 {
   "name": "next-auth-adapter-filemaker",
   "version": "1.0.0",
+  "private": false,
   "description": "next-auth Adapter for FileMaker Server",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "next-auth": "^4.2.1"
+  },
   "repository": "git@github.com:proofgeist/next-auth-adapter-filemaker.git",
   "author": "Eric <37158449+eluce2@users.noreply.github.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@upstash/redis": "^0.2.1",
+    "next-auth": "^4.2.1"
+  }
 }
