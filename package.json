@@ -1,0 +1,10 @@
+{
+  "name": "next-auth-adapter-filemaker",
+  "version": "1.0.0",
+  "description": "next-auth Adapter for FileMaker Server",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "git@github.com:proofgeist/next-auth-adapter-filemaker.git",
+  "author": "Eric <37158449+eluce2@users.noreply.github.com>",
+  "license": "MIT"
+}
