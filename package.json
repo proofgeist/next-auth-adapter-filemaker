@@ -1,6 +1,6 @@
 {
   "name": "next-auth-adapter-filemaker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "description": "next-auth Adapter for FileMaker Server",
   "main": "dist/index.js",
@@ -20,5 +20,8 @@
   "devDependencies": {
     "@upstash/redis": "^0.2.1",
     "next-auth": "^4.2.1"
-  }
+  },
+  "files": [
+    "/dist"
+  ]
 }
