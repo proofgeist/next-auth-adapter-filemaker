@@ -22,7 +22,7 @@ npm install next-auth next-auth-adapter-filemaker
 ```
 2. Add `nextauth` schema to your FileMaker file
 
-🐞 FileMaker Add-On coming soon! In the meantime, you must add the following 4 tables to your FileMaker database. The schema can be copied from the FileMaker file in this repo.
+:warning: FileMaker Add-On coming soon! In the meantime, you must add the following 4 tables to your FileMaker database. The schema can be copied from the [FileMaker file](/NextAuth.fmp12) in this repo. Username: `admin`; Password: `admin`
 - nextauth_user
 - nextauth_account
 - nextauth_session 
@@ -56,6 +56,7 @@ export default NextAuth({
 With the default behavior of next-auth when you use an adapter, the web app will check the user's session at least as frequently as on each page load, sometimes more frequently. If you'd like to optimize this for speed or limit the use of the Data API, you have a couple of options, but each come with a set of their own trade-off that you should understand.
 
 ### Option 1: JWT
+- 👍🏻 Super simple to configure
 - 👍🏻 FileMaker is the only database you need
 - 👎🏻 You cannot revoke a JWT to instantly log out a user. To mitigate this, you could set the exipre time of the JWT to be very short, but would increase the load on your FMS
 
@@ -64,10 +65,10 @@ To enable JWT within next-auth, see the session strategry to `jwt` in your [conf
 NOTE: With this option, the Session table will not be used in your FileMaker file.
 ### Option 2: Redis Cache
 - 👍🏻 Use true database sessions which can be revoked at any time if needed
-- 👍🏻 Set the session age to a longer period of time to keep a user logged in
+- 👍🏻 Drastically limits Data API calls to your FileMaker Server
 - 👎🏻 Any changes to the user record in FileMaker will not be immediately reflected in the web app unless you update the cache, but this can be done from the FM side via API call to Upstash.
 
-🐞 This feature is currently only supported with the [Upstash](https://upstash.com/) redis host.
+:warning: This feature is currently only supported with the [Upstash](https://upstash.com/) redis host.
 
 For this option, you must pass Upstash client credentials into the Adapter.
 ```ts
