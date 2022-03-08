@@ -14,7 +14,7 @@
   "peerDependencies": {
     "next-auth": "^4.2.1"
   },
-  "repository": "git@github.com:proofgeist/next-auth-adapter-filemaker.git",
+  "repository": "git://github.com/proofgeist/next-auth-adapter-filemaker.git",
   "author": "Eric <37158449+eluce2@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {

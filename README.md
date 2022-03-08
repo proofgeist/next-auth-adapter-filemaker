@@ -69,9 +69,14 @@ NOTE: With this option, the Session table will not be used in your FileMaker fil
 - 👎🏻 Any changes to the user record in FileMaker will not be immediately reflected in the web app unless you update the cache, but this can be done from the FM side via API call to Upstash.
 
 :warning: This feature is currently only supported with the [Upstash](https://upstash.com/) redis host.
+```
+npm install @upstash/redis
+```
 
-For this option, you must pass Upstash client credentials into the Adapter.
+To use, pass Upstash client credentials into the Adapter.
 ```ts
+import upstashRedisClient from "@upstash/redis"
+
 const redis = upstashRedisClient(
     "UPSTASH_REDIS_URL",
     "UPSTASH_REDIS_TOKEN"
