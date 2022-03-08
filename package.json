@@ -1,15 +1,19 @@
 {
   "name": "next-auth-adapter-filemaker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "description": "next-auth Adapter for FileMaker Server",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "build": "tsc"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@upstash/redis": "^0.2.1"
   },
   "peerDependencies": {
     "next-auth": "^4.2.1"
