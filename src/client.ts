@@ -39,7 +39,7 @@ function fmDAPI(options: ClientObjectProps) {
   const baseUrl = new URL(
     `${options.server}/fmi/data/vLatest/databases/${options.db}`
   );
-  let token: string | undefined = undefined;
+  let token: string | null = null;
   if ("apiKey" in options.auth) {
     baseUrl.port = (options.auth.ottoPort ?? 3030).toString();
     token = options.auth.apiKey;
@@ -47,11 +47,28 @@ function fmDAPI(options: ClientObjectProps) {
 
   async function getToken(refresh = false): Promise<string> {
     if ("apiKey" in options.auth) return options.auth.apiKey;
-    if (refresh) token = undefined; // clear token so are forced to get a new one
+    if (refresh) token = null; // clear token so are forced to get a new one
 
     if (!token) {
-      // TODO get a token
-      token = "";
+      const res = await fetch(`${baseUrl}/sessions`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Basic ${Buffer.from(
+            `${options.auth.username}:${options.auth.password}`
+          ).toString("base64")}`,
+        },
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new FileMakerError(
+          data.messages[0].code,
+          data.messages[0].message
+        );
+      }
+      token = res.headers.get("X-FM-Data-Access-Token");
+      if (!token) throw new Error("Could not get token");
     }
 
     return token;

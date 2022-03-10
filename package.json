@@ -23,6 +23,7 @@
   "author": "Eric <37158449+eluce2@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^17.0.21",
     "@upstash/redis": "^0.2.1",
     "next-auth": "^4.2.1"
   },

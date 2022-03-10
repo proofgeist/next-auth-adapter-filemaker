@@ -21,7 +21,7 @@ type OttoAPIKey = {
 export interface FilemakerAdapterOptions {
   server: string;
   db: string;
-  auth: OttoAPIKey;
+  auth: OttoAPIKey | DAPIAuth;
   upstash?: {
     client: Upstash;
     options?: UpstashRedisAdapterOptions;
@@ -77,7 +77,7 @@ export function FilemakerAdapter(
   const client = fmDAPI({
     server: options.server,
     db: options.db,
-    apiKey: options.auth.apiKey,
+    auth: options.auth,
   });
 
   const upstash =
