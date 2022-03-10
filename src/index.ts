@@ -1,4 +1,3 @@
-import upstashRedisClient from "@upstash/redis";
 import { Upstash } from "@upstash/redis/src/types";
 import type { Account as AdapterAccount, User } from "next-auth";
 import type { Adapter, AdapterUser, AdapterSession } from "next-auth/adapters";
@@ -9,19 +8,25 @@ import {
   UpstashMethods,
   UpstashRedisAdapterOptions,
 } from "./upstash-methods.js";
+import { RedisMethods } from "./redis-methods.js";
+import { createClient } from "redis";
 
 type DAPIAuth = {
   username: string;
   password: string;
 };
+
 type OttoAPIKey = {
   apiKey: string;
   ottoPort?: number;
 };
+
+const myClient = createClient();
 export interface FilemakerAdapterOptions {
   server: string;
   db: string;
-  auth: OttoAPIKey;
+  auth: OttoAPIKey | DAPIAuth;
+  redis?: { client: typeof myClient };
   upstash?: {
     client: Upstash;
     options?: UpstashRedisAdapterOptions;
@@ -77,12 +82,13 @@ export function FilemakerAdapter(
   const client = fmDAPI({
     server: options.server,
     db: options.db,
-    apiKey: options.auth.apiKey,
+    auth: options.auth,
   });
 
   const upstash =
-    options.upstash &&
-    UpstashMethods(options.upstash.client, options.upstash.options);
+    (options.upstash &&
+      UpstashMethods(options.upstash.client, options.upstash.options)) ||
+    (options.redis && RedisMethods(options.redis.client));
 
   const layoutUser = "nextauth_user";
   const layoutAccount = "nextauth_account";

@@ -13,18 +13,28 @@
     "access": "public"
   },
   "dependencies": {
-    "@upstash/redis": "^0.2.1",
     "isomorphic-unfetch": "^3.1.0"
   },
   "peerDependencies": {
-    "next-auth": "^4.2.1"
+    "next-auth": "^4.2.1",
+    "@upstash/redis": "^0.2.1",
+    "redis": "^4.0.4"
+  },
+  "peerDependenciesMeta": {
+    "redis": {
+      "optional": true
+    },
+    "@upstash/redis": {
+      "optional": true
+    }
   },
   "repository": "git://github.com/proofgeist/next-auth-adapter-filemaker.git",
   "author": "Eric <37158449+eluce2@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
     "@upstash/redis": "^0.2.1",
-    "next-auth": "^4.2.1"
+    "next-auth": "^4.2.1",
+    "redis": "^4.0.4"
   },
   "files": [
     "/dist"
