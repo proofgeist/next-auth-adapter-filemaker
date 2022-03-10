@@ -12,7 +12,6 @@
 This is the FileMaker Server adapter for [`next-auth`](https://next-auth.js.org). This package can only be used in conjunction with the primary `next-auth`. It is not a standalone package. It uses the FileMaker Data API interally, but no specific FM Data API client is required.
 
 :warning: This is a BETA package with limited functionality. Current limitations:
-- Requries [Otto](https://ottofms.com/)'s [Data API Proxy](https://www.ottofms.com/docs/developer-api/proxy)
 - Caching with Redis (optional) only works with the [Upstash](https://upstash.com/) service
 
 ## Getting Started
@@ -30,7 +29,7 @@ npm install next-auth next-auth-adapter-filemaker
 
 You must also have 1 layout for each of these tables in your file, with the **exact** same name as the table.
 
-Lastly, make sure you have a user account in the FileMaker file with `fmrest` privileges and generate an API key for use with Otto's [Data API Proxy](https://www.ottofms.com/docs/developer-api/proxy).
+Lastly, make sure you have a user account in the FileMaker file with `fmrest` privileges. If you are using [Otto](https://ottofms.com/), generate an API key for use with Otto's [Data API Proxy](https://www.ottofms.com/docs/developer-api/proxy).
 
 3. Add the follwing code to your `pages/api/[...nextauth].js` next-auth configuration object.
 
@@ -40,6 +39,8 @@ import { FilemakerAdapter } from "next-auth-adapter-filemaker";
 
 const fmAdapter = FilemakerAdapter({
   auth: { apiKey: "OTTO_API_KEY" },
+  // or, if you don't have Otto on your FM Server
+  // auth: { username: "FM_USERNAME", password: "FM_PASSWORD" },
   db: "FM_DATABASE",
   server: "https://myfmserver.com",
 });

@@ -17,8 +17,12 @@ import {
 type ClientObjectProps = {
   server: string;
   db: string;
-  apiKey: string;
-  ottoPort?: number;
+  auth:
+    | {
+        apiKey: string;
+        ottoPort?: number;
+      }
+    | { username: string; password: string };
   layout?: string;
 };
 
@@ -32,8 +36,43 @@ class FileMakerError extends Error {
 }
 
 function fmDAPI(options: ClientObjectProps) {
-  const ottoPort = options.ottoPort ?? 3030;
-  const baseUrl = `${options.server}:${ottoPort}/fmi/data/vLatest/databases/${options.db}`;
+  const baseUrl = new URL(
+    `${options.server}/fmi/data/vLatest/databases/${options.db}`
+  );
+  let token: string | null = null;
+  if ("apiKey" in options.auth) {
+    baseUrl.port = (options.auth.ottoPort ?? 3030).toString();
+    token = options.auth.apiKey;
+  }
+
+  async function getToken(refresh = false): Promise<string> {
+    if ("apiKey" in options.auth) return options.auth.apiKey;
+    if (refresh) token = null; // clear token so are forced to get a new one
+
+    if (!token) {
+      const res = await fetch(`${baseUrl}/sessions`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Basic ${Buffer.from(
+            `${options.auth.username}:${options.auth.password}`
+          ).toString("base64")}`,
+        },
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new FileMakerError(
+          data.messages[0].code,
+          data.messages[0].message
+        );
+      }
+      token = res.headers.get("X-FM-Data-Access-Token");
+      if (!token) throw new Error("Could not get token");
+    }
+
+    return token;
+  }
 
   async function request(params: {
     url: string;
@@ -44,10 +83,12 @@ function fmDAPI(options: ClientObjectProps) {
     const { query, body, method = "POST" } = params;
     const url = new URL(`${baseUrl}${params.url}`);
 
+    const token = await getToken();
+
     const fetchOpts: RequestInit = {
       method,
       headers: {
-        Authorization: `Bearer ${options.apiKey}`,
+        Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
     };

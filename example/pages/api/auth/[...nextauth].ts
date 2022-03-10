@@ -11,6 +11,10 @@ const redis = upstashRedisClient(
 
 const fmAdapter = FilemakerAdapter({
   auth: { apiKey: process.env.OTTO_API_KEY },
+  // auth: {
+  //   username: process.env.FM_USERNAME,
+  //   password: process.env.FM_PASSWORD,
+  // },
   db: process.env.FM_DATABASE,
   server: process.env.FM_SERVER,
   upstash: { client: redis, options: { baseKeyPrefix: "demo:" } },
