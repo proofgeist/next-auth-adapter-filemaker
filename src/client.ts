@@ -1,4 +1,4 @@
-import fetch from "isomorphic-unfetch";
+import fetch from "node-fetch";
 import {
   CreateParams,
   CreateResponse,
@@ -61,7 +61,7 @@ function fmDAPI(options: ClientObjectProps) {
       });
 
       if (!res.ok) {
-        const data = await res.json();
+        const data = (await res.json()) as any;
         throw new FileMakerError(
           data.messages[0].code,
           data.messages[0].message
@@ -80,23 +80,19 @@ function fmDAPI(options: ClientObjectProps) {
     query?: Record<string, string>;
     method?: string;
   }) {
-    const { query, body, method = "POST" } = params;
+    const { query, body = {}, method = "POST" } = params;
     const url = new URL(`${baseUrl}${params.url}`);
 
+    if (query) url.search = new URLSearchParams(query).toString();
     const token = await getToken();
-
-    const fetchOpts: RequestInit = {
+    const res = await fetch(url.toString(), {
       method,
+      body: JSON.stringify(body),
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
       },
-    };
-
-    if (body) fetchOpts.body = JSON.stringify(body);
-    if (query) url.search = new URLSearchParams(query).toString();
-
-    const res = await fetch(url.toString(), { ...fetchOpts });
+    });
 
     let respData: any;
     try {
