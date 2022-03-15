@@ -235,11 +235,16 @@ export function FilemakerAdapter(
     async updateUser(user) {
       console.log("updateUser running...");
       const recordId = await getUserRecordId(user.id ?? "");
-      await client.update<FMUserModel>(layoutUser, recordId, {
-        email: user.email ?? "",
-        name: user.name ?? "",
-        emailVerified: user.emailVerified?.toString() ?? "",
-      });
+
+      let patchData: any = user;
+      if (patchData.emailVerified)
+        // must convert to string if it exists
+        patchData.emailVerified = patchData.emailVerified.toString();
+
+      // cannot modify the id in FM
+      delete patchData.id;
+
+      await client.update<FMUserModel>(layoutUser, recordId, patchData);
       const res = await client.get<FMUserModel>(layoutUser, recordId);
       const data = res.data[0].fieldData;
       return await cacheFmUser(data);
