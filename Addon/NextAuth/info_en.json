@@ -1,0 +1,13 @@
+﻿{
+	"Title": "NextAuth",
+	"Description": "A collection of schema and scripts required when using the next-auth-filemaker-adapter package",
+	"Category": "Web",
+	"Features": [
+		"INSERT HERE ...<A list of features that the template provides>... - DNL"
+	],
+	"Optimized": [
+		"Desktop",
+		"Tablet",
+		"Mobile"
+	]
+}

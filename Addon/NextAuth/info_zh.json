@@ -1,0 +1,18 @@
+﻿{
+	"Title" : "NextAuth",
+
+	"Description" : "*** DESCRIPTION MISSING *** - DNL",
+
+	"Category" : "___...___",
+
+	"Features" :
+		[
+			"INSERT HERE ...<A list of features that the template provides>... - DNL"
+		],
+
+	"Optimized" :
+		[
+			"Desktop", "Tablet", "Mobile"
+
+		]
+}

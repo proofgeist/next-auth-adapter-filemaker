@@ -1,0 +1,1008 @@
+﻿
+<DynamicTemplateString>
+	<StringID>com.fmi.basedirectory.D32DD515D3C9A36EE2120C1161B6E678</StringID>
+	<SourceText>Demo_NextAuth/</SourceText>
+	<TargetText>Demo_NextAuth/</TargetText>
+	<Comment>com.fmi.basedirectory.Demo_NextAuth/</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.1C184F3DEB3463F081669758711B3C1A</StringID>
+	<SourceText>nextauth_verificationToken</SourceText>
+	<TargetText>nextauth_verificationToken</TargetText>
+	<Comment>com.fmi.basetable.nextauth_verificationToken</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.8A1AB65A052219F00E910A2F937AC38C</StringID>
+	<SourceText>nextauth_session</SourceText>
+	<TargetText>nextauth_session</TargetText>
+	<Comment>com.fmi.basetable.nextauth_session</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.DDF592403F541887B7279153775E28A1</StringID>
+	<SourceText>nextauth_user</SourceText>
+	<TargetText>nextauth_user</TargetText>
+	<Comment>com.fmi.basetable.nextauth_user</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.EA286692CF6645D2A1FDA55184C28BB9</StringID>
+	<SourceText>nextauth_account</SourceText>
+	<TargetText>nextauth_account</TargetText>
+	<Comment>com.fmi.basetable.nextauth_account</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::25EB2BBA4BE90C32A9750993802899C8</StringID>
+	<SourceText>ModifiedBy</SourceText>
+	<TargetText>ModifiedBy</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::ModifiedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::4B5C206A89FDC60BB157F4678A2783A2</StringID>
+	<SourceText>ModificationTimestamp</SourceText>
+	<TargetText>ModificationTimestamp</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::ModificationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::4B68129F6621C41900B27BF59AB8FD9B</StringID>
+	<SourceText>id</SourceText>
+	<TargetText>id</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::id</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::516607FB6F3D276989A7774B8E6A7E64</StringID>
+	<SourceText>token_type</SourceText>
+	<TargetText>token_type</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::token_type</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::518DAE05AB65E143CC1D5668D3B636B4</StringID>
+	<SourceText>userId</SourceText>
+	<TargetText>userId</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::userId</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::5E38197A1CF5AA007C983141D84145C0</StringID>
+	<SourceText>CreatedBy</SourceText>
+	<TargetText>CreatedBy</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::CreatedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::7181FD79F397C6E174D82BD2DF993E5F</StringID>
+	<SourceText>scope</SourceText>
+	<TargetText>scope</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::scope</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::74434AB5FCE4FAAEFDC691DB64D55AB1</StringID>
+	<SourceText>expires_at</SourceText>
+	<TargetText>expires_at</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::expires_at</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::795003B0E4301F8533792505C790D370</StringID>
+	<SourceText>provider</SourceText>
+	<TargetText>provider</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::provider</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::7ADE85B5A8ED2A9ABEDFE0B6A5ABA6D2</StringID>
+	<SourceText>refresh_token</SourceText>
+	<TargetText>refresh_token</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::refresh_token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::83A2EAA3EF4147F6897E3A7B5EF0701C</StringID>
+	<SourceText>session_state</SourceText>
+	<TargetText>session_state</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::session_state</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::97C8C084AF2C78DDD1C8324147043C2F</StringID>
+	<SourceText>access_token</SourceText>
+	<TargetText>access_token</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::access_token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::E744B839626E18BF37A985736F228576</StringID>
+	<SourceText>CreationTimestamp</SourceText>
+	<TargetText>CreationTimestamp</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::CreationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::E8242F9CA220C53035AFF0819EEDB978</StringID>
+	<SourceText>type</SourceText>
+	<TargetText>type</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::type</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::ED290C96077F9F8A569E9E3BACDF8A11</StringID>
+	<SourceText>oauth_token</SourceText>
+	<TargetText>oauth_token</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::oauth_token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::F533F2670155F858535277CDE3052D50</StringID>
+	<SourceText>id_token</SourceText>
+	<TargetText>id_token</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::id_token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::F673F39229F92AD9C7EB227ABF86FB5C</StringID>
+	<SourceText>providerAccountId</SourceText>
+	<TargetText>providerAccountId</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::providerAccountId</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::FD15E68BAC83A410DED1E6E8E358EEEE</StringID>
+	<SourceText>oauth_token_secret</SourceText>
+	<TargetText>oauth_token_secret</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::oauth_token_secret</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::text.006251EC5E780AAC1B5240837F8DC008</StringID>
+	<SourceText>Account name of the user who created each record</SourceText>
+	<TargetText>Account name of the user who created each record</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::text.Account name of the user who created each record</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::text.63B24250D0322BA606783EA1AEB5ECDE</StringID>
+	<SourceText>Date and time each record was created</SourceText>
+	<TargetText>Date and time each record was created</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::text.Date and time each record was created</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::text.A3986CD67105454C16160FFC610128B2</StringID>
+	<SourceText>Date and time each record was last modified</SourceText>
+	<TargetText>Date and time each record was last modified</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::text.Date and time each record was last modified</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::text.ABEEF7BAB93FF174F8DA0C82D8754F7A</StringID>
+	<SourceText>Unique identifier of each record in this table</SourceText>
+	<TargetText>Unique identifier of each record in this table</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::text.Unique identifier of each record in this table</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_account::text.FF4362C03FD199B932B4B4D441CAC852</StringID>
+	<SourceText>Account name of the user who last modified each record</SourceText>
+	<TargetText>Account name of the user who last modified each record</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_account::text.Account name of the user who last modified each record</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::25EB2BBA4BE90C32A9750993802899C8</StringID>
+	<SourceText>ModifiedBy</SourceText>
+	<TargetText>ModifiedBy</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::ModifiedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::4B5C206A89FDC60BB157F4678A2783A2</StringID>
+	<SourceText>ModificationTimestamp</SourceText>
+	<TargetText>ModificationTimestamp</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::ModificationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::4B68129F6621C41900B27BF59AB8FD9B</StringID>
+	<SourceText>id</SourceText>
+	<TargetText>id</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::id</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::4FEB5C0ED368D1143448B026068EDB8B</StringID>
+	<SourceText>expires</SourceText>
+	<TargetText>expires</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::expires</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::518DAE05AB65E143CC1D5668D3B636B4</StringID>
+	<SourceText>userId</SourceText>
+	<TargetText>userId</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::userId</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::5E38197A1CF5AA007C983141D84145C0</StringID>
+	<SourceText>CreatedBy</SourceText>
+	<TargetText>CreatedBy</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::CreatedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::CBCD22C930ACC7DAEC71A16980351744</StringID>
+	<SourceText>sessionToken</SourceText>
+	<TargetText>sessionToken</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::sessionToken</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::E744B839626E18BF37A985736F228576</StringID>
+	<SourceText>CreationTimestamp</SourceText>
+	<TargetText>CreationTimestamp</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::CreationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::text.006251EC5E780AAC1B5240837F8DC008</StringID>
+	<SourceText>Account name of the user who created each record</SourceText>
+	<TargetText>Account name of the user who created each record</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::text.Account name of the user who created each record</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::text.63B24250D0322BA606783EA1AEB5ECDE</StringID>
+	<SourceText>Date and time each record was created</SourceText>
+	<TargetText>Date and time each record was created</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::text.Date and time each record was created</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::text.A3986CD67105454C16160FFC610128B2</StringID>
+	<SourceText>Date and time each record was last modified</SourceText>
+	<TargetText>Date and time each record was last modified</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::text.Date and time each record was last modified</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::text.ABEEF7BAB93FF174F8DA0C82D8754F7A</StringID>
+	<SourceText>Unique identifier of each record in this table</SourceText>
+	<TargetText>Unique identifier of each record in this table</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::text.Unique identifier of each record in this table</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_session::text.FF4362C03FD199B932B4B4D441CAC852</StringID>
+	<SourceText>Account name of the user who last modified each record</SourceText>
+	<TargetText>Account name of the user who last modified each record</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_session::text.Account name of the user who last modified each record</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::25EB2BBA4BE90C32A9750993802899C8</StringID>
+	<SourceText>ModifiedBy</SourceText>
+	<TargetText>ModifiedBy</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::ModifiedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::449159923C9A8CB6D42046EA433858D1</StringID>
+	<SourceText>asJSON</SourceText>
+	<TargetText>asJSON</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::asJSON</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::4B5C206A89FDC60BB157F4678A2783A2</StringID>
+	<SourceText>ModificationTimestamp</SourceText>
+	<TargetText>ModificationTimestamp</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::ModificationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::4B68129F6621C41900B27BF59AB8FD9B</StringID>
+	<SourceText>id</SourceText>
+	<TargetText>id</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::id</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::5588ADDA2E7F62A48B84279D69752C99</StringID>
+	<SourceText>email</SourceText>
+	<TargetText>email</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::email</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::5E38197A1CF5AA007C983141D84145C0</StringID>
+	<SourceText>CreatedBy</SourceText>
+	<TargetText>CreatedBy</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::CreatedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::6C65589BF319743648F1CAB95738F7B3</StringID>
+	<SourceText>emailVerified</SourceText>
+	<TargetText>emailVerified</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::emailVerified</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::6D3180078C082563A8038ACBD9B738A4</StringID>
+	<SourceText>name</SourceText>
+	<TargetText>name</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::name</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::C18D1F72F97940070A963B4EC003334C</StringID>
+	<SourceText>image</SourceText>
+	<TargetText>image</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::image</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::E744B839626E18BF37A985736F228576</StringID>
+	<SourceText>CreationTimestamp</SourceText>
+	<TargetText>CreationTimestamp</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::CreationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::text.006251EC5E780AAC1B5240837F8DC008</StringID>
+	<SourceText>Account name of the user who created each record</SourceText>
+	<TargetText>Account name of the user who created each record</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::text.Account name of the user who created each record</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::text.63B24250D0322BA606783EA1AEB5ECDE</StringID>
+	<SourceText>Date and time each record was created</SourceText>
+	<TargetText>Date and time each record was created</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::text.Date and time each record was created</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::text.A3986CD67105454C16160FFC610128B2</StringID>
+	<SourceText>Date and time each record was last modified</SourceText>
+	<TargetText>Date and time each record was last modified</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::text.Date and time each record was last modified</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::text.ABEEF7BAB93FF174F8DA0C82D8754F7A</StringID>
+	<SourceText>Unique identifier of each record in this table</SourceText>
+	<TargetText>Unique identifier of each record in this table</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::text.Unique identifier of each record in this table</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_user::text.FF4362C03FD199B932B4B4D441CAC852</StringID>
+	<SourceText>Account name of the user who last modified each record</SourceText>
+	<TargetText>Account name of the user who last modified each record</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_user::text.Account name of the user who last modified each record</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::25EB2BBA4BE90C32A9750993802899C8</StringID>
+	<SourceText>ModifiedBy</SourceText>
+	<TargetText>ModifiedBy</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::ModifiedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::4B5C206A89FDC60BB157F4678A2783A2</StringID>
+	<SourceText>ModificationTimestamp</SourceText>
+	<TargetText>ModificationTimestamp</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::ModificationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::4FEB5C0ED368D1143448B026068EDB8B</StringID>
+	<SourceText>expires</SourceText>
+	<TargetText>expires</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::expires</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::5E38197A1CF5AA007C983141D84145C0</StringID>
+	<SourceText>CreatedBy</SourceText>
+	<TargetText>CreatedBy</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::CreatedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::76C4D1087E6796EF70CE7A2F1901C476</StringID>
+	<SourceText>PrimaryKey</SourceText>
+	<TargetText>PrimaryKey</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::PrimaryKey</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::98070997A24CD62495E90D5984F2D701</StringID>
+	<SourceText>identifier</SourceText>
+	<TargetText>identifier</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::identifier</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::E462042EE35F50480266D0615DF2A97D</StringID>
+	<SourceText>token</SourceText>
+	<TargetText>token</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::E744B839626E18BF37A985736F228576</StringID>
+	<SourceText>CreationTimestamp</SourceText>
+	<TargetText>CreationTimestamp</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::CreationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::text.006251EC5E780AAC1B5240837F8DC008</StringID>
+	<SourceText>Account name of the user who created each record</SourceText>
+	<TargetText>Account name of the user who created each record</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::text.Account name of the user who created each record</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::text.63B24250D0322BA606783EA1AEB5ECDE</StringID>
+	<SourceText>Date and time each record was created</SourceText>
+	<TargetText>Date and time each record was created</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::text.Date and time each record was created</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::text.A3986CD67105454C16160FFC610128B2</StringID>
+	<SourceText>Date and time each record was last modified</SourceText>
+	<TargetText>Date and time each record was last modified</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::text.Date and time each record was last modified</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::text.ABEEF7BAB93FF174F8DA0C82D8754F7A</StringID>
+	<SourceText>Unique identifier of each record in this table</SourceText>
+	<TargetText>Unique identifier of each record in this table</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::text.Unique identifier of each record in this table</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.field.nextauth_verificationToken::text.FF4362C03FD199B932B4B4D441CAC852</StringID>
+	<SourceText>Account name of the user who last modified each record</SourceText>
+	<TargetText>Account name of the user who last modified each record</TargetText>
+	<Comment>com.fmi.basetable.field.nextauth_verificationToken::text.Account name of the user who last modified each record</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B1A3CBA506D376B72ACF229B675D0A48</StringID>
+	<SourceText>JSONSetElement ( &quot;&quot;<CR/><CR/>; [ &quot;id&quot; ; id ; JSONString ]<CR/>; [ &quot;email&quot; ; email ; JSONString ]<CR/>; [ &quot;hasAccount&quot; ; Count ( SSP_Operator_CompanyUser::Operator_CompanyUser_UUID ) = 1 ; JSONBoolean ]<CR/>; [ &quot;enabled&quot; ; SSP_Operator_CompanyUser::c_AccessEnabled ; JSONBoolean ]<CR/><CR/> )</SourceText>
+	<TargetText>JSONSetElement ( &quot;&quot;<CR/><CR/>; [ &quot;id&quot; ; id ; JSONString ]<CR/>; [ &quot;email&quot; ; email ; JSONString ]<CR/>; [ &quot;hasAccount&quot; ; Count ( SSP_Operator_CompanyUser::Operator_CompanyUser_UUID ) = 1 ; JSONBoolean ]<CR/>; [ &quot;enabled&quot; ; SSP_Operator_CompanyUser::c_AccessEnabled ; JSONBoolean ]<CR/><CR/> )</TargetText>
+	<Comment>com.fmi.calculation.text.JSONSetElement ( &quot;&quot;_CR/__CR/_; [ &quot;id&quot; ; id ; JSONString ]_CR/_; [ &quot;email&quot; ; email ; JSONString ]_CR/_; [ &quot;hasAccount&quot; ; Count ( SSP_Operator_CompanyUser::Operator_CompanyUser_UUID ) = 1 ; JSONBoolean ]_CR/_; [ &quot;enabled&quot; ; SSP_Operator_CompanyUser::c_AccessEnabled ; JSONBoolean ]_CR/__CR/_ )</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layout.1C184F3DEB3463F081669758711B3C1A</StringID>
+	<SourceText>nextauth_verificationToken</SourceText>
+	<TargetText>nextauth_verificationToken</TargetText>
+	<Comment>com.fmi.layout.nextauth_verificationToken</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layout.6379E5E2BCCC0CB9F89DE39305D36906</StringID>
+	<SourceText>Demo_NextAuth</SourceText>
+	<TargetText>Demo_NextAuth</TargetText>
+	<Comment>com.fmi.layout.Demo_NextAuth</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layout.8A1AB65A052219F00E910A2F937AC38C</StringID>
+	<SourceText>nextauth_session</SourceText>
+	<TargetText>nextauth_session</TargetText>
+	<Comment>com.fmi.layout.nextauth_session</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layout.DDF592403F541887B7279153775E28A1</StringID>
+	<SourceText>nextauth_user</SourceText>
+	<TargetText>nextauth_user</TargetText>
+	<Comment>com.fmi.layout.nextauth_user</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layout.EA286692CF6645D2A1FDA55184C28BB9</StringID>
+	<SourceText>nextauth_account</SourceText>
+	<TargetText>nextauth_account</TargetText>
+	<Comment>com.fmi.layout.nextauth_account</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.25EB2BBA4BE90C32A9750993802899C8</StringID>
+	<SourceText>ModifiedBy</SourceText>
+	<TargetText>ModifiedBy</TargetText>
+	<Comment>com.fmi.layoutobject.text.ModifiedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.4B5C206A89FDC60BB157F4678A2783A2</StringID>
+	<SourceText>ModificationTimestamp</SourceText>
+	<TargetText>ModificationTimestamp</TargetText>
+	<Comment>com.fmi.layoutobject.text.ModificationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.4B68129F6621C41900B27BF59AB8FD9B</StringID>
+	<SourceText>id</SourceText>
+	<TargetText>id</TargetText>
+	<Comment>com.fmi.layoutobject.text.id</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.4FEB5C0ED368D1143448B026068EDB8B</StringID>
+	<SourceText>expires</SourceText>
+	<TargetText>expires</TargetText>
+	<Comment>com.fmi.layoutobject.text.expires</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.516607FB6F3D276989A7774B8E6A7E64</StringID>
+	<SourceText>token_type</SourceText>
+	<TargetText>token_type</TargetText>
+	<Comment>com.fmi.layoutobject.text.token_type</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.518DAE05AB65E143CC1D5668D3B636B4</StringID>
+	<SourceText>userId</SourceText>
+	<TargetText>userId</TargetText>
+	<Comment>com.fmi.layoutobject.text.userId</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.5588ADDA2E7F62A48B84279D69752C99</StringID>
+	<SourceText>email</SourceText>
+	<TargetText>email</TargetText>
+	<Comment>com.fmi.layoutobject.text.email</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.5E38197A1CF5AA007C983141D84145C0</StringID>
+	<SourceText>CreatedBy</SourceText>
+	<TargetText>CreatedBy</TargetText>
+	<Comment>com.fmi.layoutobject.text.CreatedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.6C65589BF319743648F1CAB95738F7B3</StringID>
+	<SourceText>emailVerified</SourceText>
+	<TargetText>emailVerified</TargetText>
+	<Comment>com.fmi.layoutobject.text.emailVerified</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.6D3180078C082563A8038ACBD9B738A4</StringID>
+	<SourceText>name</SourceText>
+	<TargetText>name</TargetText>
+	<Comment>com.fmi.layoutobject.text.name</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.7181FD79F397C6E174D82BD2DF993E5F</StringID>
+	<SourceText>scope</SourceText>
+	<TargetText>scope</TargetText>
+	<Comment>com.fmi.layoutobject.text.scope</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.74434AB5FCE4FAAEFDC691DB64D55AB1</StringID>
+	<SourceText>expires_at</SourceText>
+	<TargetText>expires_at</TargetText>
+	<Comment>com.fmi.layoutobject.text.expires_at</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.76C4D1087E6796EF70CE7A2F1901C476</StringID>
+	<SourceText>PrimaryKey</SourceText>
+	<TargetText>PrimaryKey</TargetText>
+	<Comment>com.fmi.layoutobject.text.PrimaryKey</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.795003B0E4301F8533792505C790D370</StringID>
+	<SourceText>provider</SourceText>
+	<TargetText>provider</TargetText>
+	<Comment>com.fmi.layoutobject.text.provider</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.7ADE85B5A8ED2A9ABEDFE0B6A5ABA6D2</StringID>
+	<SourceText>refresh_token</SourceText>
+	<TargetText>refresh_token</TargetText>
+	<Comment>com.fmi.layoutobject.text.refresh_token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.83A2EAA3EF4147F6897E3A7B5EF0701C</StringID>
+	<SourceText>session_state</SourceText>
+	<TargetText>session_state</TargetText>
+	<Comment>com.fmi.layoutobject.text.session_state</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.97C8C084AF2C78DDD1C8324147043C2F</StringID>
+	<SourceText>access_token</SourceText>
+	<TargetText>access_token</TargetText>
+	<Comment>com.fmi.layoutobject.text.access_token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.98070997A24CD62495E90D5984F2D701</StringID>
+	<SourceText>identifier</SourceText>
+	<TargetText>identifier</TargetText>
+	<Comment>com.fmi.layoutobject.text.identifier</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.CBCD22C930ACC7DAEC71A16980351744</StringID>
+	<SourceText>sessionToken</SourceText>
+	<TargetText>sessionToken</TargetText>
+	<Comment>com.fmi.layoutobject.text.sessionToken</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.E462042EE35F50480266D0615DF2A97D</StringID>
+	<SourceText>token</SourceText>
+	<TargetText>token</TargetText>
+	<Comment>com.fmi.layoutobject.text.token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.E744B839626E18BF37A985736F228576</StringID>
+	<SourceText>CreationTimestamp</SourceText>
+	<TargetText>CreationTimestamp</TargetText>
+	<Comment>com.fmi.layoutobject.text.CreationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.E8242F9CA220C53035AFF0819EEDB978</StringID>
+	<SourceText>type</SourceText>
+	<TargetText>type</TargetText>
+	<Comment>com.fmi.layoutobject.text.type</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.ED290C96077F9F8A569E9E3BACDF8A11</StringID>
+	<SourceText>oauth_token</SourceText>
+	<TargetText>oauth_token</TargetText>
+	<Comment>com.fmi.layoutobject.text.oauth_token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.F533F2670155F858535277CDE3052D50</StringID>
+	<SourceText>id_token</SourceText>
+	<TargetText>id_token</TargetText>
+	<Comment>com.fmi.layoutobject.text.id_token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.F673F39229F92AD9C7EB227ABF86FB5C</StringID>
+	<SourceText>providerAccountId</SourceText>
+	<TargetText>providerAccountId</TargetText>
+	<Comment>com.fmi.layoutobject.text.providerAccountId</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.layoutobject.text.FD15E68BAC83A410DED1E6E8E358EEEE</StringID>
+	<SourceText>oauth_token_secret</SourceText>
+	<TargetText>oauth_token_secret</TargetText>
+	<Comment>com.fmi.layoutobject.text.oauth_token_secret</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.1C184F3DEB3463F081669758711B3C1A</StringID>
+	<SourceText>nextauth_verificationToken</SourceText>
+	<TargetText>nextauth_verificationToken</TargetText>
+	<Comment>com.fmi.tableoccurrence.nextauth_verificationToken</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.4286129D428FCFA3D4FCBCA6874FC771</StringID>
+	<SourceText>&lt;Table Missing&gt;</SourceText>
+	<TargetText>&lt;Table Missing&gt;</TargetText>
+	<Comment>com.fmi.tableoccurrence.&lt;Table Missing&gt;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.8A1AB65A052219F00E910A2F937AC38C</StringID>
+	<SourceText>nextauth_session</SourceText>
+	<TargetText>nextauth_session</TargetText>
+	<Comment>com.fmi.tableoccurrence.nextauth_session</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.DDF592403F541887B7279153775E28A1</StringID>
+	<SourceText>nextauth_user</SourceText>
+	<TargetText>nextauth_user</TargetText>
+	<Comment>com.fmi.tableoccurrence.nextauth_user</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.EA286692CF6645D2A1FDA55184C28BB9</StringID>
+	<SourceText>nextauth_account</SourceText>
+	<TargetText>nextauth_account</TargetText>
+	<Comment>com.fmi.tableoccurrence.nextauth_account</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::25EB2BBA4BE90C32A9750993802899C8</StringID>
+	<SourceText>ModifiedBy</SourceText>
+	<TargetText>ModifiedBy</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::ModifiedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::4B5C206A89FDC60BB157F4678A2783A2</StringID>
+	<SourceText>ModificationTimestamp</SourceText>
+	<TargetText>ModificationTimestamp</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::ModificationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::4B68129F6621C41900B27BF59AB8FD9B</StringID>
+	<SourceText>id</SourceText>
+	<TargetText>id</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::id</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::516607FB6F3D276989A7774B8E6A7E64</StringID>
+	<SourceText>token_type</SourceText>
+	<TargetText>token_type</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::token_type</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::518DAE05AB65E143CC1D5668D3B636B4</StringID>
+	<SourceText>userId</SourceText>
+	<TargetText>userId</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::userId</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::5E38197A1CF5AA007C983141D84145C0</StringID>
+	<SourceText>CreatedBy</SourceText>
+	<TargetText>CreatedBy</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::CreatedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::7181FD79F397C6E174D82BD2DF993E5F</StringID>
+	<SourceText>scope</SourceText>
+	<TargetText>scope</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::scope</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::74434AB5FCE4FAAEFDC691DB64D55AB1</StringID>
+	<SourceText>expires_at</SourceText>
+	<TargetText>expires_at</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::expires_at</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::795003B0E4301F8533792505C790D370</StringID>
+	<SourceText>provider</SourceText>
+	<TargetText>provider</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::provider</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::7ADE85B5A8ED2A9ABEDFE0B6A5ABA6D2</StringID>
+	<SourceText>refresh_token</SourceText>
+	<TargetText>refresh_token</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::refresh_token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::83A2EAA3EF4147F6897E3A7B5EF0701C</StringID>
+	<SourceText>session_state</SourceText>
+	<TargetText>session_state</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::session_state</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::97C8C084AF2C78DDD1C8324147043C2F</StringID>
+	<SourceText>access_token</SourceText>
+	<TargetText>access_token</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::access_token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::E744B839626E18BF37A985736F228576</StringID>
+	<SourceText>CreationTimestamp</SourceText>
+	<TargetText>CreationTimestamp</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::CreationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::E8242F9CA220C53035AFF0819EEDB978</StringID>
+	<SourceText>type</SourceText>
+	<TargetText>type</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::type</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::ED290C96077F9F8A569E9E3BACDF8A11</StringID>
+	<SourceText>oauth_token</SourceText>
+	<TargetText>oauth_token</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::oauth_token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::F533F2670155F858535277CDE3052D50</StringID>
+	<SourceText>id_token</SourceText>
+	<TargetText>id_token</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::id_token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::F673F39229F92AD9C7EB227ABF86FB5C</StringID>
+	<SourceText>providerAccountId</SourceText>
+	<TargetText>providerAccountId</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::providerAccountId</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_account::FD15E68BAC83A410DED1E6E8E358EEEE</StringID>
+	<SourceText>oauth_token_secret</SourceText>
+	<TargetText>oauth_token_secret</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_account::oauth_token_secret</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_session::25EB2BBA4BE90C32A9750993802899C8</StringID>
+	<SourceText>ModifiedBy</SourceText>
+	<TargetText>ModifiedBy</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_session::ModifiedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_session::4B5C206A89FDC60BB157F4678A2783A2</StringID>
+	<SourceText>ModificationTimestamp</SourceText>
+	<TargetText>ModificationTimestamp</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_session::ModificationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_session::4B68129F6621C41900B27BF59AB8FD9B</StringID>
+	<SourceText>id</SourceText>
+	<TargetText>id</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_session::id</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_session::4FEB5C0ED368D1143448B026068EDB8B</StringID>
+	<SourceText>expires</SourceText>
+	<TargetText>expires</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_session::expires</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_session::518DAE05AB65E143CC1D5668D3B636B4</StringID>
+	<SourceText>userId</SourceText>
+	<TargetText>userId</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_session::userId</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_session::5E38197A1CF5AA007C983141D84145C0</StringID>
+	<SourceText>CreatedBy</SourceText>
+	<TargetText>CreatedBy</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_session::CreatedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_session::CBCD22C930ACC7DAEC71A16980351744</StringID>
+	<SourceText>sessionToken</SourceText>
+	<TargetText>sessionToken</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_session::sessionToken</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_session::E744B839626E18BF37A985736F228576</StringID>
+	<SourceText>CreationTimestamp</SourceText>
+	<TargetText>CreationTimestamp</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_session::CreationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_user::4B68129F6621C41900B27BF59AB8FD9B</StringID>
+	<SourceText>id</SourceText>
+	<TargetText>id</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_user::id</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_user::5588ADDA2E7F62A48B84279D69752C99</StringID>
+	<SourceText>email</SourceText>
+	<TargetText>email</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_user::email</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_user::6C65589BF319743648F1CAB95738F7B3</StringID>
+	<SourceText>emailVerified</SourceText>
+	<TargetText>emailVerified</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_user::emailVerified</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_user::6D3180078C082563A8038ACBD9B738A4</StringID>
+	<SourceText>name</SourceText>
+	<TargetText>name</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_user::name</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_verificationToken::25EB2BBA4BE90C32A9750993802899C8</StringID>
+	<SourceText>ModifiedBy</SourceText>
+	<TargetText>ModifiedBy</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_verificationToken::ModifiedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_verificationToken::4B5C206A89FDC60BB157F4678A2783A2</StringID>
+	<SourceText>ModificationTimestamp</SourceText>
+	<TargetText>ModificationTimestamp</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_verificationToken::ModificationTimestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_verificationToken::4FEB5C0ED368D1143448B026068EDB8B</StringID>
+	<SourceText>expires</SourceText>
+	<TargetText>expires</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_verificationToken::expires</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_verificationToken::5E38197A1CF5AA007C983141D84145C0</StringID>
+	<SourceText>CreatedBy</SourceText>
+	<TargetText>CreatedBy</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_verificationToken::CreatedBy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_verificationToken::76C4D1087E6796EF70CE7A2F1901C476</StringID>
+	<SourceText>PrimaryKey</SourceText>
+	<TargetText>PrimaryKey</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_verificationToken::PrimaryKey</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_verificationToken::98070997A24CD62495E90D5984F2D701</StringID>
+	<SourceText>identifier</SourceText>
+	<TargetText>identifier</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_verificationToken::identifier</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_verificationToken::E462042EE35F50480266D0615DF2A97D</StringID>
+	<SourceText>token</SourceText>
+	<TargetText>token</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_verificationToken::token</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.nextauth_verificationToken::E744B839626E18BF37A985736F228576</StringID>
+	<SourceText>CreationTimestamp</SourceText>
+	<TargetText>CreationTimestamp</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.nextauth_verificationToken::CreationTimestamp</Comment>
+</DynamicTemplateString>
