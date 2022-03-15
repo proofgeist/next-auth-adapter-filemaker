@@ -80,14 +80,14 @@ function fmDAPI(options: ClientObjectProps) {
     query?: Record<string, string>;
     method?: string;
   }) {
-    const { query, body = {}, method = "POST" } = params;
+    const { query, body, method = "POST" } = params;
     const url = new URL(`${baseUrl}${params.url}`);
 
     if (query) url.search = new URLSearchParams(query).toString();
     const token = await getToken();
     const res = await fetch(url.toString(), {
       method,
-      body: JSON.stringify(body),
+      body: body ? JSON.stringify(body) : undefined,
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
