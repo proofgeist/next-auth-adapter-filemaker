@@ -2,12 +2,13 @@
   "extends": "./tsconfig/base.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "dist",
   },
   "exclude": [
     "tests",
     "dist",
     "example",
+    "adapter-test",
     "jest.config.js"
   ]
 }

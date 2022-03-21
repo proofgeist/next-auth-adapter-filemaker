@@ -3,12 +3,9 @@ import { Upstash } from "@upstash/redis/src/types";
 import type { Account as AdapterAccount, User } from "next-auth";
 import type { Adapter, AdapterUser, AdapterSession } from "next-auth/adapters";
 
-import fmDAPI from "./client.js";
-import { Numerish } from "./client-types.js";
-import {
-  UpstashMethods,
-  UpstashRedisAdapterOptions,
-} from "./upstash-methods.js";
+import fmDAPI from "./client";
+import { Numerish } from "./client-types";
+import { UpstashMethods, UpstashRedisAdapterOptions } from "./upstash-methods";
 
 type DAPIAuth = {
   username: string;

@@ -214,3 +214,4 @@ function fmDAPI(options: ClientObjectProps) {
 }
 
 export default fmDAPI;
+export { fmDAPI, FileMakerError };

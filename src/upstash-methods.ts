@@ -109,7 +109,7 @@ export function UpstashMethods(
     return await getUser(emailResponse.data);
   }
 
-  async function getUserByAccount(account) {
+  async function getUserByAccount(account: any) {
     const dbAccount = await getAccount(
       `${account.provider}:${account.providerAccountId}`
     );
@@ -121,14 +121,14 @@ export function UpstashMethods(
     await client.del(sessionKeyPrefix + sessionToken);
   };
 
-  const createVerificationToken = async (verificationToken) => {
+  const createVerificationToken = async (verificationToken: any) => {
     await setObjectAsJson(
       verificationTokenKeyPrefix + verificationToken.identifier,
       verificationToken
     );
     return verificationToken;
   };
-  const useVerificationToken = async (verificationToken) => {
+  const useVerificationToken = async (verificationToken: any) => {
     const tokenKey = verificationTokenKeyPrefix + verificationToken.identifier;
     const tokenResponse = await client.get(tokenKey);
     if (!tokenResponse.data) return null;
