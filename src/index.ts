@@ -68,6 +68,13 @@ type AdapterReturn = {
   updateUserCache: (user: User) => Promise<void>;
 };
 
+export type {
+  FMAccountModel,
+  FMSessionModel,
+  FMUserModel,
+  FMVerificationTokenModal,
+};
+
 export function FilemakerAdapter(
   options: FilemakerAdapterOptions
 ): AdapterReturn {
@@ -153,7 +160,7 @@ export function FilemakerAdapter(
       console.log("createUser running...");
       const res = await client.create<FMUserModel>(layoutUser, {
         ...user,
-        emailVerified: user.emailVerified?.toString() ?? "",
+        emailVerified: user.emailVerified?.toISOString() ?? "",
       });
       const record = await client.get<FMUserModel>(
         layoutUser,
@@ -236,7 +243,7 @@ export function FilemakerAdapter(
       let patchData: any = user;
       if (patchData.emailVerified)
         // must convert to string if it exists
-        patchData.emailVerified = patchData.emailVerified.toString();
+        patchData.emailVerified = patchData.emailVerified.toISOString();
 
       // cannot modify the id in FM
       delete patchData.id;
@@ -358,7 +365,7 @@ export function FilemakerAdapter(
       const record = await client.find<FMSessionModel>(
         layoutSession,
         {
-          sessionToken,
+          sessionToken: `==${sessionToken}`,
         },
         undefined,
         true
@@ -393,7 +400,9 @@ export function FilemakerAdapter(
 
       const record = await client.find<FMVerificationTokenModal>(
         layoutVerificationToken,
-        { identifier: `==${identifier}`, token: `==${token}` }
+        { identifier: `==${identifier}`, token: `==${token}` },
+        undefined,
+        true
       );
       if (record.data.length !== 1) return null;
       await client.delete<FMVerificationTokenModal>(
