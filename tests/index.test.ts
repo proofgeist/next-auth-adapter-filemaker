@@ -19,7 +19,6 @@ if (
   });
 } else {
   const fmAdapter = FilemakerAdapter({
-    // auth: { apiKey: process.env.OTTO_API_KEY },
     auth: {
       username: process.env.FM_USERNAME,
       password: process.env.FM_PASSWORD,
@@ -45,6 +44,7 @@ if (
   runBasicTests({
     adapter: fmAdapter.Adapter,
     db: {
+      disconnect: client.disconnect,
       async account(account) {
         const res = await client.find<FMAccountModel>(
           layoutAccount,

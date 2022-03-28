@@ -211,6 +211,42 @@ function fmDAPI(options: ClientObjectProps) {
         throw e;
       }
     },
+
+    async disconnect() {
+      if ("apiKey" in options.auth)
+        throw new Error("Cannot disconnect when using Otto API key.");
+
+      const token = await getToken();
+      const url = new URL(`${baseUrl}/sessions/${token}`);
+
+      const res = await fetch(url.toString(), {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+
+      let respData: any;
+      try {
+        respData = await res.json();
+      } catch {
+        respData = {};
+      }
+
+      if (!res.ok) {
+        throw new FileMakerError(
+          respData?.messages?.[0].code ?? "500",
+          `Filemaker Data API failed with (${res.status}): ${JSON.stringify(
+            respData,
+            null,
+            2
+          )}`
+        );
+      }
+
+      return respData.response;
+    },
   };
 }
 

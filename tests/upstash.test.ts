@@ -54,7 +54,7 @@ if (
   runBasicTests({
     adapter: fmAdapter.Adapter,
     db: {
-      disconnect: async () => {},
+      disconnect: client.disconnect,
       async account(account) {
         const res = await client.find<FMAccountModel>(
           layoutAccount,
