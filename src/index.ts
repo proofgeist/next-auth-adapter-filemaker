@@ -257,7 +257,10 @@ export function FilemakerAdapter(
       console.log("deleteUser running...");
       const recordId = await getUserRecordId(userId);
       await client.delete(layoutUser, recordId);
-      // TODO delete cache from redis also
+
+      if (upstash) {
+        await upstash.deleteUser(userId);
+      }
     },
     async linkAccount(account) {
       console.log("linkAccount running...");

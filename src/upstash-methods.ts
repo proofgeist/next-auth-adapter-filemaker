@@ -121,6 +121,20 @@ export function UpstashMethods(
     await client.del(sessionKeyPrefix + sessionToken);
   };
 
+  const deleteUser = async (userId: string) => {
+    console.log("about to delete user ID:", userId);
+    const { data: user } = await getUser(userId);
+    console.log("user while delete", { user });
+    if (!user) return;
+    const sessionByUserIdKey = `${sessionByUserIdKeyPrefix}${userId}`;
+    const { data: sessionKey } = await client.get(sessionByUserIdKey);
+    await client.del(
+      `${emailKeyPrefix}${user.email as string}`,
+      sessionKey as string,
+      sessionByUserIdKey
+    );
+  };
+
   const createVerificationToken = async (verificationToken: any) => {
     await setObjectAsJson(
       verificationTokenKeyPrefix + verificationToken.identifier,
@@ -148,5 +162,6 @@ export function UpstashMethods(
     createVerificationToken,
     useVerificationToken,
     deleteSession,
+    deleteUser,
   };
 }
