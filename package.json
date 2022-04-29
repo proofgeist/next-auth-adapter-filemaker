@@ -1,11 +1,11 @@
 {
   "name": "next-auth-adapter-filemaker",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": false,
   "description": "next-auth Adapter for FileMaker Server",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "build": "tsc",
     "test": "jest"
