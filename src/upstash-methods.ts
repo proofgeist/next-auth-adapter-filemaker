@@ -1,6 +1,6 @@
 import type { Account as AdapterAccount } from "next-auth";
 import type { Adapter, AdapterUser, AdapterSession } from "next-auth/adapters";
-import { Upstash } from "@upstash/redis/src/types";
+import type { Redis as Upstash } from "@upstash/redis";
 
 export interface UpstashRedisAdapterOptions {
   baseKeyPrefix?: string;
@@ -73,9 +73,9 @@ export function UpstashMethods(
   };
 
   const getAccount = async (id: string) => {
-    const response = await client.get(accountKeyPrefix + id);
-    if (!response.data) return null;
-    return reviveFromJson(response.data);
+    const data = await client.get<string>(accountKeyPrefix + id);
+    if (!data) return null;
+    return reviveFromJson(data);
   };
 
   const setSession = async (id: string, session: AdapterSession) => {
@@ -86,9 +86,9 @@ export function UpstashMethods(
   };
 
   const getSession = async (id: string) => {
-    const response = await client.get(sessionKeyPrefix + id);
-    if (!response.data) return null;
-    return reviveFromJson(response.data);
+    const data = await client.get<string>(sessionKeyPrefix + id);
+    if (!data) return null;
+    return reviveFromJson(data);
   };
 
   const setUser = async (id: string, user: AdapterUser) => {
@@ -98,15 +98,15 @@ export function UpstashMethods(
   };
 
   const getUser = async (id: string) => {
-    const response = await client.get(userKeyPrefix + id);
-    if (!response.data) return null;
-    return reviveFromJson(response.data);
+    const data = await client.get<string>(userKeyPrefix + id);
+    if (!data) return null;
+    return reviveFromJson(data);
   };
 
   async function getUserByEmail(email: string) {
-    const emailResponse = await client.get(emailKeyPrefix + email);
-    if (!emailResponse.data) return null;
-    return await getUser(emailResponse.data);
+    const data = await client.get<string>(emailKeyPrefix + email);
+    if (!data) return null;
+    return await getUser(data);
   }
 
   async function getUserByAccount(account: any) {
@@ -127,7 +127,7 @@ export function UpstashMethods(
     console.log("user while delete", { user });
     if (!user) return;
     const sessionByUserIdKey = `${sessionByUserIdKeyPrefix}${userId}`;
-    const { data: sessionKey } = await client.get(sessionByUserIdKey);
+    const sessionKey = await client.get<string>(sessionByUserIdKey);
     await client.del(
       `${emailKeyPrefix}${user.email as string}`,
       sessionKey as string,
@@ -144,10 +144,10 @@ export function UpstashMethods(
   };
   const useVerificationToken = async (verificationToken: any) => {
     const tokenKey = verificationTokenKeyPrefix + verificationToken.identifier;
-    const tokenResponse = await client.get(tokenKey);
-    if (!tokenResponse.data) return null;
+    const tokenResponse = await client.get<string>(tokenKey);
+    if (!tokenResponse) return null;
     await client.del(tokenKey);
-    return reviveFromJson(tokenResponse.data);
+    return reviveFromJson(tokenResponse);
   };
 
   return {

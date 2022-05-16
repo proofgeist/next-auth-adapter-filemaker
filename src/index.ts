@@ -1,7 +1,6 @@
-import upstashRedisClient from "@upstash/redis";
-import { Upstash } from "@upstash/redis/src/types";
 import type { Account as AdapterAccount, User } from "next-auth";
 import type { Adapter, AdapterUser, AdapterSession } from "next-auth/adapters";
+import type { Redis as Upstash } from "@upstash/redis";
 
 import { DataApi } from "@proofgeist/fmdapi";
 import { UpstashMethods, UpstashRedisAdapterOptions } from "./upstash-methods";

@@ -1,7 +1,7 @@
 import { runBasicTests } from "../adapter-test";
 import { FilemakerAdapter } from "../src";
-import upstashRedisClient from "@upstash/redis";
-import fmDAPI from "../src/client";
+import { Redis } from "@upstash/redis";
+import fmDAPI from "@proofgeist/fmdapi";
 import type {
   FMAccountModel,
   FMSessionModel,
@@ -22,10 +22,10 @@ if (
     expect(true).toBe(true);
   });
 } else {
-  const redis = upstashRedisClient(
-    process.env.UPSTASH_REDIS_URL,
-    process.env.UPSTASH_REDIS_TOKEN
-  );
+  const redis = new Redis({
+    url: process.env.UPSTASH_REDIS_URL,
+    token: process.env.UPSTASH_REDIS_TOKEN,
+  });
 
   const fmAdapter = FilemakerAdapter({
     auth: {
@@ -56,41 +56,41 @@ if (
     db: {
       disconnect: client.disconnect,
       async account(account) {
-        const res = await client.find<FMAccountModel>(
-          layoutAccount,
-          {
+        const res = await client.find<FMAccountModel>({
+          layout: layoutAccount,
+          query: {
             providerAccountId: `==${account.providerAccountId}`,
             provider: `==${account.provider}`,
           },
-          undefined,
-          true
-        );
+          ignoreEmptyResult: true,
+        });
         const data = res.data[0]?.fieldData;
         return data ?? null;
       },
       async session(sessionToken) {
-        const { data } = await redis.get(
+        const data = await redis.get<string>(
           `testApp:user:session:${sessionToken}`
         );
         if (!data) return null;
         return reviveFromJson(data);
       },
       async user(userId) {
-        const res = await client.find<FMUserModel>(
-          layoutUser,
-          {
+        const res = await client.find<FMUserModel>({
+          layout: layoutUser,
+          query: {
             id: `==${userId}`,
           },
-          undefined,
-          true
-        );
+          ignoreEmptyResult: true,
+        });
         const data = res.data[0]?.fieldData;
         return data
           ? { ...data, emailVerified: new Date(data.emailVerified) }
           : null;
       },
       async verificationToken({ identifier, token }) {
-        const { data } = await redis.get(`testApp:user:token:${identifier}`);
+        const data = await redis.get<string>(
+          `testApp:user:token:${identifier}`
+        );
         if (!data) return null;
         return reviveFromJson(data);
       },

@@ -6,7 +6,7 @@ import type {
   FMUserModel,
   FMVerificationTokenModal,
 } from "../src";
-import fmDAPI from "../src/client";
+import fmDAPI from "@proofgeist/fmdapi";
 
 if (
   !process.env.FM_USERNAME ||
@@ -46,51 +46,47 @@ if (
     db: {
       disconnect: client.disconnect,
       async account(account) {
-        const res = await client.find<FMAccountModel>(
-          layoutAccount,
-          {
+        const res = await client.find<FMAccountModel>({
+          layout: layoutAccount,
+          query: {
             providerAccountId: `==${account.providerAccountId}`,
             provider: `==${account.provider}`,
           },
-          undefined,
-          true
-        );
+          ignoreEmptyResult: true,
+        });
         const data = res.data[0]?.fieldData;
         return data ?? null;
       },
       async session(sessionToken) {
-        const res = await client.find<FMSessionModel>(
-          layoutSession,
-          {
+        const res = await client.find<FMSessionModel>({
+          layout: layoutSession,
+          query: {
             sessionToken,
           },
-          undefined,
-          true
-        );
+          ignoreEmptyResult: true,
+        });
         const data = res.data[0]?.fieldData;
         return data ? { ...data, expires: new Date(data.expires) } : null;
       },
       async user(userId) {
-        const res = await client.find<FMUserModel>(
-          layoutUser,
-          {
+        const res = await client.find<FMUserModel>({
+          layout: layoutUser,
+          query: {
             id: `==${userId}`,
           },
-          undefined,
-          true
-        );
+          ignoreEmptyResult: true,
+        });
         const data = res.data[0]?.fieldData;
         return data
           ? { ...data, emailVerified: new Date(data.emailVerified) }
           : null;
       },
       async verificationToken({ identifier, token }) {
-        const res = await client.find<FMVerificationTokenModal>(
-          layoutVerificationToken,
-          { identifier: `==${identifier}`, token: `==${token}` },
-          undefined,
-          true
-        );
+        const res = await client.find<FMVerificationTokenModal>({
+          layout: layoutVerificationToken,
+          query: { identifier: `==${identifier}`, token: `==${token}` },
+          ignoreEmptyResult: true,
+        });
         const data = res.data[0]?.fieldData;
         return data ? { ...data, expires: new Date(data.expires) } : null;
       },
