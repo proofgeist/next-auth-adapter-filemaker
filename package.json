@@ -14,7 +14,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@proofgeist/fmdapi": "^0.1.1",
+    "@proofgeist/fmdapi": "^0.1.2",
     "@upstash/redis": "^0.2.1",
     "node-fetch": "2.6.7"
   },

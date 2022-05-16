@@ -1256,10 +1256,10 @@
   resolved "https://registry.yarnpkg.com/@panva/hkdf/-/hkdf-1.0.1.tgz#ed0da773bd5f794d0603f5a5b5cee6d2354e5660"
   integrity sha512-mMyQ9vjpuFqePkfe5bZVIf/H3Dmk6wA8Kjxff9RcO4kqzJo+Ek9pGKwZHpeMr7Eku0QhLXMCd7fNCSnEnRMubg==
 
-"@proofgeist/fmdapi@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@proofgeist/fmdapi/-/fmdapi-0.1.1.tgz#f92ed662680f586a50713e676ee101665bf195a9"
-  integrity sha512-2s45eQfbwaxLRy+v3uGCC1MpuCbeRcMgMKl6PWGbVCgJQJl7LgCGZqdjnKHrGo4ApARFGozH26ob9Oe8YRh3YA==
+"@proofgeist/fmdapi@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@proofgeist/fmdapi/-/fmdapi-0.1.2.tgz#18468f7ff259984ad7b7f45bd43023bae968136f"
+  integrity sha512-gSR9x9hC0cYR7hdW4Vtd/yy6ijFmug3NyEgGqTBiDVAUf6hDQUcf2p8g1xtuJTdnQewdtp6Xz6nLda2/hHxYLg==
   dependencies:
     fs-extra "^10.1.0"
     node-fetch "2.6.7"
