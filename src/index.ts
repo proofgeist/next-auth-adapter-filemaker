@@ -3,9 +3,9 @@ import { Upstash } from "@upstash/redis/src/types";
 import type { Account as AdapterAccount, User } from "next-auth";
 import type { Adapter, AdapterUser, AdapterSession } from "next-auth/adapters";
 
-import fmDAPI from "./client";
-import { Numerish } from "./client-types";
+import { DataApi } from "@proofgeist/fmdapi";
 import { UpstashMethods, UpstashRedisAdapterOptions } from "./upstash-methods";
+import { Numerish } from "@proofgeist/fmdapi/dist/client-types";
 
 type DAPIAuth = {
   username: string;
@@ -78,7 +78,7 @@ export type {
 export function FilemakerAdapter(
   options: FilemakerAdapterOptions
 ): AdapterReturn {
-  const client = fmDAPI({
+  const client = DataApi({
     server: options.server,
     db: options.db,
     auth: options.auth,
@@ -94,42 +94,38 @@ export function FilemakerAdapter(
   const layoutVerificationToken = "nextauth_verificationToken";
 
   async function getUserRecordId(userId: string): Promise<number> {
-    const foundUser = await client.find<FMUserModel>(
-      layoutUser,
-      {
+    const foundUser = await client.find<FMUserModel>({
+      layout: layoutUser,
+      query: {
         id: `==${userId}`,
       },
-      undefined,
-      false // throw error if not found
-    );
+    });
     return parseInt(foundUser.data[0].recordId);
   }
 
   async function getAccount(
     account: Pick<AdapterAccount, "provider" | "providerAccountId">
   ) {
-    const res = await client.find<FMAccountModel, { user: FMUserModel }>(
-      layoutAccount,
-      {
+    const res = await client.find<FMAccountModel, { user: FMUserModel }>({
+      layout: layoutAccount,
+      query: {
         providerAccountId: `==${account.providerAccountId}`,
         provider: `==${account.provider}`,
       },
-      {},
-      true
-    );
+      ignoreEmptyResult: true,
+    });
     if (res.data.length === 0) return undefined;
     return res.data[0];
   }
 
   async function getUser(id: string): Promise<FMUserModel | null> {
-    const res = await client.find<FMUserModel>(
-      layoutUser,
-      {
+    const res = await client.find<FMUserModel>({
+      layout: layoutUser,
+      query: {
         id: `==${id}`,
       },
-      {},
-      true
-    );
+      ignoreEmptyResult: true,
+    });
     if (res.data.length === 0) return null;
     const data = res.data[0].fieldData;
     return data;
@@ -158,14 +154,17 @@ export function FilemakerAdapter(
   const Adapter: Adapter = {
     async createUser(user: any) {
       console.log("createUser running...");
-      const res = await client.create<FMUserModel>(layoutUser, {
-        ...user,
-        emailVerified: user.emailVerified?.toISOString() ?? "",
+      const res = await client.create<FMUserModel>({
+        layout: layoutUser,
+        fieldData: {
+          ...user,
+          emailVerified: user.emailVerified?.toISOString() ?? "",
+        },
       });
-      const record = await client.get<FMUserModel>(
-        layoutUser,
-        parseInt(res.recordId)
-      );
+      const record = await client.get<FMUserModel>({
+        layout: layoutUser,
+        recordId: parseInt(res.recordId),
+      });
       const data = record.data[0].fieldData;
       return await cacheFmUser(data);
     },
@@ -195,14 +194,13 @@ export function FilemakerAdapter(
       }
 
       // else, fetch from FM
-      const res = await client.find<FMUserModel>(
-        layoutUser,
-        {
+      const res = await client.find<FMUserModel>({
+        layout: layoutUser,
+        query: {
           email: `==${email}`,
         },
-        {},
-        true
-      );
+        ignoreEmptyResult: true,
+      });
       if (res.data.length === 0) return null;
       const data = res.data[0].fieldData;
 
@@ -222,14 +220,12 @@ export function FilemakerAdapter(
       const foundAccount = await getAccount(account);
       if (!foundAccount) return null;
       const userID = foundAccount.fieldData.userId;
-      const userRecord = await client.find<FMUserModel>(
-        layoutUser,
-        {
-          id: `==${userID}`,
-        },
-        undefined,
-        true
-      );
+      const userRecord = await client.find<FMUserModel>({
+        layout: layoutUser,
+        query: { id: `==${userID}` },
+        ignoreEmptyResult: true,
+      });
+
       if (userRecord.data.length !== 1) return null;
       const data = userRecord.data[0].fieldData;
 
@@ -248,15 +244,22 @@ export function FilemakerAdapter(
       // cannot modify the id in FM
       delete patchData.id;
 
-      await client.update<FMUserModel>(layoutUser, recordId, patchData);
-      const res = await client.get<FMUserModel>(layoutUser, recordId);
+      await client.update<FMUserModel>({
+        layout: layoutUser,
+        recordId,
+        fieldData: patchData,
+      });
+      const res = await client.get<FMUserModel>({
+        layout: layoutUser,
+        recordId,
+      });
       const data = res.data[0].fieldData;
       return await cacheFmUser(data);
     },
     async deleteUser(userId) {
       console.log("deleteUser running...");
       const recordId = await getUserRecordId(userId);
-      await client.delete(layoutUser, recordId);
+      await client.delete({ layout: layoutUser, recordId });
 
       if (upstash) {
         await upstash.deleteUser(userId);
@@ -264,7 +267,10 @@ export function FilemakerAdapter(
     },
     async linkAccount(account) {
       console.log("linkAccount running...");
-      await client.create<FMAccountModel>(layoutAccount, account);
+      await client.create<FMAccountModel>({
+        layout: layoutAccount,
+        fieldData: account,
+      });
       return;
     },
     async unlinkAccount(account) {
@@ -272,7 +278,10 @@ export function FilemakerAdapter(
       // delete account record?
       const foundAccount = await getAccount(account);
       if (!foundAccount) return;
-      await client.delete(layoutAccount, parseInt(foundAccount.recordId));
+      await client.delete({
+        layout: layoutAccount,
+        recordId: parseInt(foundAccount.recordId),
+      });
       return;
     },
     async createSession(session) {
@@ -285,15 +294,18 @@ export function FilemakerAdapter(
           id: sessionToken,
         });
 
-      const res = await client.create<FMSessionModel>(layoutSession, {
-        sessionToken,
-        userId,
-        expires: expires.toISOString(),
+      const res = await client.create<FMSessionModel>({
+        layout: layoutSession,
+        fieldData: {
+          sessionToken,
+          userId,
+          expires: expires.toISOString(),
+        },
       });
-      const sessionRecord = await client.get<FMSessionModel>(
-        layoutSession,
-        parseInt(res.recordId)
-      );
+      const sessionRecord = await client.get<FMSessionModel>({
+        layout: layoutSession,
+        recordId: parseInt(res.recordId),
+      });
       const data = sessionRecord.data[0].fieldData;
       return { ...data, expires: new Date(data.expires) };
     },
@@ -308,25 +320,23 @@ export function FilemakerAdapter(
         return { session, user };
       }
 
-      const record = await client.find<FMSessionModel>(
-        layoutSession,
-        {
+      const record = await client.find<FMSessionModel>({
+        layout: layoutSession,
+        query: {
           sessionToken,
         },
-        undefined,
-        true
-      );
+        ignoreEmptyResult: true,
+      });
       if (record.data.length !== 1) return null;
       const sessionRecord = record.data[0].fieldData;
       const userID = sessionRecord.userId;
-      const userRecord = await client.find<FMUserModel>(
-        layoutUser,
-        {
+      const userRecord = await client.find<FMUserModel>({
+        layout: layoutUser,
+        query: {
           id: `==${userID}`,
         },
-        undefined,
-        true
-      );
+        ignoreEmptyResult: true,
+      });
       if (userRecord.data.length !== 1) return null;
       const data = userRecord.data[0].fieldData;
       const userData = await cacheFmUser(data);
@@ -347,35 +357,37 @@ export function FilemakerAdapter(
         });
       }
 
-      const record = await client.find<FMSessionModel>(
-        layoutSession,
-        {
+      const record = await client.find<FMSessionModel>({
+        layout: layoutSession,
+        query: {
           sessionToken: updates.sessionToken,
         },
-        undefined,
-        true
-      );
+        ignoreEmptyResult: true,
+      });
       if (record.data.length !== 1) return null;
-      const recID = parseInt(record.data[0].recordId);
+      const recordId = parseInt(record.data[0].recordId);
 
       const updateData = updates as any;
-      await client.update(layoutSession, recID, updateData);
+      await client.update({
+        layout: layoutSession,
+        recordId,
+        fieldData: updateData,
+      });
       return;
     },
     async deleteSession(sessionToken) {
       console.log("deleteSession running...");
       if (upstash) return await upstash.deleteSession(sessionToken);
-      const record = await client.find<FMSessionModel>(
-        layoutSession,
-        {
+      const record = await client.find<FMSessionModel>({
+        layout: layoutSession,
+        query: {
           sessionToken: `==${sessionToken}`,
         },
-        undefined,
-        true
-      );
+        ignoreEmptyResult: true,
+      });
       if (record.data.length !== 1) return;
-      const recID = parseInt(record.data[0].recordId);
-      await client.delete<FMSessionModel>(layoutSession, recID);
+      const recordId = parseInt(record.data[0].recordId);
+      await client.delete<FMSessionModel>({ layout: layoutSession, recordId });
       return;
     },
     async createVerificationToken({ identifier, expires, token }) {
@@ -388,10 +400,13 @@ export function FilemakerAdapter(
           token,
         });
 
-      await client.create<FMVerificationTokenModal>(layoutVerificationToken, {
-        identifier,
-        token,
-        expires: expires.toISOString(),
+      await client.create<FMVerificationTokenModal>({
+        layout: layoutVerificationToken,
+        fieldData: {
+          identifier,
+          token,
+          expires: expires.toISOString(),
+        },
       });
       return { expires, identifier, token };
     },
@@ -401,17 +416,16 @@ export function FilemakerAdapter(
       if (upstash)
         return await upstash.useVerificationToken({ identifier, token });
 
-      const record = await client.find<FMVerificationTokenModal>(
-        layoutVerificationToken,
-        { identifier: `==${identifier}`, token: `==${token}` },
-        undefined,
-        true
-      );
+      const record = await client.find<FMVerificationTokenModal>({
+        layout: layoutVerificationToken,
+        query: { identifier: `==${identifier}`, token: `==${token}` },
+        ignoreEmptyResult: true,
+      });
       if (record.data.length !== 1) return null;
-      await client.delete<FMVerificationTokenModal>(
-        layoutVerificationToken,
-        parseInt(record.data[0].recordId)
-      );
+      await client.delete<FMVerificationTokenModal>({
+        layout: layoutVerificationToken,
+        recordId: parseInt(record.data[0].recordId),
+      });
       const data = record.data[0].fieldData;
       return { ...data, expires: new Date(data.expires) };
     },
