@@ -1,10 +1,9 @@
 import type { Account as AdapterAccount, User } from "next-auth";
-import type { Adapter, AdapterUser, AdapterSession } from "next-auth/adapters";
+import type { Adapter, AdapterUser } from "next-auth/adapters";
 import type { Redis as Upstash } from "@upstash/redis";
 
 import { DataApi } from "@proofgeist/fmdapi";
 import { UpstashMethods, UpstashRedisAdapterOptions } from "./upstash-methods";
-import { Numerish } from "@proofgeist/fmdapi/dist/client-types";
 
 type DAPIAuth = {
   username: string;
@@ -39,7 +38,7 @@ type FMAccountModel = {
   providerAccountId: string;
   refresh_token: string;
   access_token: string;
-  expires_at: Numerish;
+  expires_at: string | number;
   token_type: string;
   scope: string;
   id_token: string;
