@@ -6,7 +6,7 @@ import type {
   FMUserModel,
   FMVerificationTokenModal,
 } from "../src";
-import fmDAPI from "@proofgeist/fmdapi";
+import { DataApi } from "@proofgeist/fmdapi";
 
 if (
   !process.env.FM_USERNAME ||
@@ -27,7 +27,7 @@ if (
     server: process.env.FM_SERVER,
   });
 
-  const client = fmDAPI({
+  const client = DataApi({
     server: process.env.FM_SERVER,
     db: process.env.FM_DATABASE,
     auth: {

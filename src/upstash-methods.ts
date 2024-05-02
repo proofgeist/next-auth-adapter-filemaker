@@ -21,7 +21,7 @@ export const defaultOptions = {
   sessionKeyPrefix: "user:session:",
   sessionByUserIdKeyPrefix: "user:session:by-user-id:",
   userKeyPrefix: "user:",
-  verificationTokenKeyPrefix: "user:token:",
+  verificationTokenKeyPrefix: "user:token:"
 };
 
 const isoDateRE =
@@ -42,7 +42,7 @@ export function UpstashMethods(
 ) {
   const mergedOptions = {
     ...defaultOptions,
-    ...options,
+    ...options
   };
 
   const { baseKeyPrefix } = mergedOptions;
@@ -78,7 +78,10 @@ export function UpstashMethods(
     return reviveFromJson(data);
   };
 
-  const setSession = async (id: string, session: AdapterSession) => {
+  const setSession = async (
+    id: string,
+    session: AdapterSession & { id: string }
+  ) => {
     const sessionKey = sessionKeyPrefix + id;
     await setObjectAsJson(sessionKey, session);
     await client.set(sessionByUserIdKeyPrefix + session.userId, sessionKey);
@@ -162,6 +165,6 @@ export function UpstashMethods(
     createVerificationToken,
     useVerificationToken,
     deleteSession,
-    deleteUser,
+    deleteUser
   };
 }

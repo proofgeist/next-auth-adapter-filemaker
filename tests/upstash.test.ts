@@ -1,13 +1,8 @@
 import { runBasicTests } from "../adapter-test";
 import { FilemakerAdapter } from "../src";
 import { Redis } from "@upstash/redis";
-import fmDAPI from "@proofgeist/fmdapi";
-import type {
-  FMAccountModel,
-  FMSessionModel,
-  FMUserModel,
-  FMVerificationTokenModal,
-} from "../src";
+import { DataApi } from "@proofgeist/fmdapi";
+import type { FMAccountModel, FMUserModel } from "../src";
 import { reviveFromJson } from "../src/upstash-methods";
 
 if (
@@ -37,7 +32,7 @@ if (
     upstash: { client: redis, options: { baseKeyPrefix: "testApp:" } },
   });
 
-  const client = fmDAPI({
+  const client = DataApi({
     server: process.env.FM_SERVER,
     db: process.env.FM_DATABASE,
     auth: {

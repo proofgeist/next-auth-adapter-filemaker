@@ -3,20 +3,19 @@ import type { Adapter, AdapterUser } from "next-auth/adapters";
 import type { Redis as Upstash } from "@upstash/redis";
 
 import { DataApi } from "@proofgeist/fmdapi";
-import { UpstashMethods, UpstashRedisAdapterOptions } from "./upstash-methods";
+import { type ClientObjectProps } from "@proofgeist/fmdapi/dist/client.js";
 
-type DAPIAuth = {
-  username: string;
-  password: string;
-};
-type OttoAPIKey = {
-  apiKey: string;
-  ottoPort?: number;
-};
+import {
+  UpstashMethods,
+  UpstashRedisAdapterOptions,
+} from "./upstash-methods.js";
+export type Otto3APIKey = `KEY_${string}`;
+export type OttoFMSAPIKey = `dk_${string}`;
+
 export interface FilemakerAdapterOptions {
   server: string;
   db: string;
-  auth: OttoAPIKey | DAPIAuth;
+  auth: ClientObjectProps["auth"];
   upstash?: {
     client: Upstash;
     options?: UpstashRedisAdapterOptions;
@@ -385,7 +384,7 @@ export function FilemakerAdapter(
       });
       if (record.data.length !== 1) return;
       const recordId = parseInt(record.data[0].recordId);
-      await client.delete<FMSessionModel>({ layout: layoutSession, recordId });
+      await client.delete({ layout: layoutSession, recordId });
       return;
     },
     async createVerificationToken({ identifier, expires, token }) {
@@ -420,7 +419,7 @@ export function FilemakerAdapter(
         ignoreEmptyResult: true,
       });
       if (record.data.length !== 1) return null;
-      await client.delete<FMVerificationTokenModal>({
+      await client.delete({
         layout: layoutVerificationToken,
         recordId: parseInt(record.data[0].recordId),
       });
