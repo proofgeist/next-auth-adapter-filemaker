@@ -3,19 +3,15 @@ import type { Adapter, AdapterUser } from "next-auth/adapters";
 import type { Redis as Upstash } from "@upstash/redis";
 
 import { DataApi } from "@proofgeist/fmdapi";
-import { type ClientObjectProps } from "@proofgeist/fmdapi/dist/client.js";
+type DapiApiProps = Parameters<typeof DataApi>[0];
 
 import {
   UpstashMethods,
   UpstashRedisAdapterOptions,
 } from "./upstash-methods.js";
-export type Otto3APIKey = `KEY_${string}`;
-export type OttoFMSAPIKey = `dk_${string}`;
 
-export interface FilemakerAdapterOptions {
-  server: string;
-  db: string;
-  auth: ClientObjectProps["auth"];
+export interface FilemakerAdapterOptions<A extends DapiApiProps["adapter"]> {
+  adapter: A;
   upstash?: {
     client: Upstash;
     options?: UpstashRedisAdapterOptions;
@@ -28,6 +24,7 @@ type FMUserModel = {
   image: string;
   email: string;
   emailVerified: string;
+  passwordHash?: string;
 };
 
 type FMAccountModel = {
@@ -60,9 +57,15 @@ type FMVerificationTokenModal = {
   identifier: string;
 };
 
-type AdapterReturn = {
+type AdapterReturn<A extends DapiApiProps["adapter"]> = {
   Adapter: Adapter;
   updateUserCache: (user: User) => Promise<void>;
+  typedClients: {
+    user: typeof DataApi<any, FMUserModel, any, A>;
+    account: typeof DataApi<any, FMAccountModel, any, A>;
+    session: typeof DataApi<any, FMSessionModel, any, A>;
+    verificationToken: typeof DataApi<any, FMVerificationTokenModal, any, A>;
+  };
 };
 
 export type {
@@ -72,13 +75,11 @@ export type {
   FMVerificationTokenModal,
 };
 
-export function FilemakerAdapter(
-  options: FilemakerAdapterOptions
-): AdapterReturn {
+export function FilemakerAdapter<A extends DapiApiProps["adapter"]>(
+  options: FilemakerAdapterOptions<A>
+): AdapterReturn<A> {
   const client = DataApi({
-    server: options.server,
-    db: options.db,
-    auth: options.auth,
+    adapter: options.adapter,
   });
 
   const upstash =
@@ -144,6 +145,7 @@ export function FilemakerAdapter(
 
   const updateUserCache = async (user: User) => {
     if (!upstash) return;
+    if (!user.id) return;
     const data = await getUser(user.id);
     if (data) await cacheFmUser(data);
   };
@@ -427,5 +429,26 @@ export function FilemakerAdapter(
       return { ...data, expires: new Date(data.expires) };
     },
   };
-  return { Adapter, updateUserCache };
+  return {
+    Adapter,
+    updateUserCache,
+    typedClients: {
+      user: DataApi({
+        adapter: options.adapter,
+        layout: layoutUser,
+      }) as unknown as typeof DataApi<any, FMUserModel, any, A>,
+      account: DataApi({
+        adapter: options.adapter,
+        layout: layoutAccount,
+      }) as unknown as typeof DataApi<any, FMAccountModel, any, A>,
+      session: DataApi({
+        adapter: options.adapter,
+        layout: layoutSession,
+      }) as unknown as typeof DataApi<any, FMSessionModel, any, A>,
+      verificationToken: DataApi({
+        adapter: options.adapter,
+        layout: layoutVerificationToken,
+      }) as unknown as typeof DataApi<any, FMVerificationTokenModal, any, A>,
+    },
+  };
 }
