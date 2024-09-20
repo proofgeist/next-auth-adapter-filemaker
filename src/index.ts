@@ -61,10 +61,12 @@ type AdapterReturn<A extends DapiApiProps["adapter"]> = {
   Adapter: Adapter;
   updateUserCache: (user: User) => Promise<void>;
   typedClients: {
-    user: typeof DataApi<any, FMUserModel, any, A>;
-    account: typeof DataApi<any, FMAccountModel, any, A>;
-    session: typeof DataApi<any, FMSessionModel, any, A>;
-    verificationToken: typeof DataApi<any, FMVerificationTokenModal, any, A>;
+    user: ReturnType<typeof DataApi<any, FMUserModel, any, A>>;
+    account: ReturnType<typeof DataApi<any, FMAccountModel, any, A>>;
+    session: ReturnType<typeof DataApi<any, FMSessionModel, any, A>>;
+    verificationToken: ReturnType<
+      typeof DataApi<any, FMVerificationTokenModal, any, A>
+    >;
   };
 };
 
@@ -433,22 +435,22 @@ export function FilemakerAdapter<A extends DapiApiProps["adapter"]>(
     Adapter,
     updateUserCache,
     typedClients: {
-      user: DataApi({
+      user: DataApi<any, FMUserModel, any, A>({
         adapter: options.adapter,
         layout: layoutUser,
-      }) as unknown as typeof DataApi<any, FMUserModel, any, A>,
-      account: DataApi({
+      }),
+      account: DataApi<any, FMAccountModel, any, A>({
         adapter: options.adapter,
         layout: layoutAccount,
-      }) as unknown as typeof DataApi<any, FMAccountModel, any, A>,
-      session: DataApi({
+      }),
+      session: DataApi<any, FMSessionModel, any, A>({
         adapter: options.adapter,
         layout: layoutSession,
-      }) as unknown as typeof DataApi<any, FMSessionModel, any, A>,
-      verificationToken: DataApi({
+      }),
+      verificationToken: DataApi<any, FMVerificationTokenModal, any, A>({
         adapter: options.adapter,
         layout: layoutVerificationToken,
-      }) as unknown as typeof DataApi<any, FMVerificationTokenModal, any, A>,
+      }),
     },
   };
 }

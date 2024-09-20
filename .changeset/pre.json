@@ -4,5 +4,7 @@
   "initialVersions": {
     "next-auth-adapter-filemaker": "2.0.0"
   },
-  "changesets": []
+  "changesets": [
+    "fluffy-keys-care"
+  ]
 }

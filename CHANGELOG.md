@@ -1,5 +1,11 @@
 ## 2.0.0
 
+## 3.0.0-beta.0
+
+### Major Changes
+
+- 19e07ec: Upgrade fmdapi and auth.js
+
 ### Major Changes
 
 - Upgrade fmdapi package for OttoFMS
