@@ -1,5 +1,11 @@
 ## 2.0.0
 
+## 3.0.0-beta.3
+
+### Minor Changes
+
+- include fm-addon
+
 ## 3.0.0-beta.0
 
 ### Major Changes

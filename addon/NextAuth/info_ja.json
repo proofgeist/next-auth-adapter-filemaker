@@ -1,0 +1,11 @@
+﻿{
+  "Title": "NextAuth",
+
+  "Description": "next-auth-filemaker-adapter パッケージを使用する場合に必要なスキーマのコレクション",
+
+  "Category": "Web",
+
+  "Features": [],
+
+  "Optimized": ["Desktop", "Tablet", "Mobile"]
+}

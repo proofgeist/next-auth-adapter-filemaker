@@ -1,0 +1,11 @@
+﻿{
+  "Title": "NextAuth",
+
+  "Description": "Un ensemble de schémas requis lors de l'utilisation du package next-auth-filemaker-adapter",
+
+  "Category": "Web",
+
+  "Features": [],
+
+  "Optimized": ["Desktop", "Tablet", "Mobile"]
+}

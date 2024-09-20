@@ -1,0 +1,11 @@
+﻿{
+  "Title": "NextAuth",
+
+  "Description": "A collection of schema required when using the next-auth-filemaker-adapter package",
+
+  "Category": "Web",
+
+  "Features": [],
+
+  "Optimized": ["Desktop", "Tablet", "Mobile"]
+}

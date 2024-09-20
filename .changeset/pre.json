@@ -5,6 +5,7 @@
     "next-auth-adapter-filemaker": "2.0.0"
   },
   "changesets": [
+    "cool-dragons-collect",
     "fluffy-keys-care"
   ]
 }
