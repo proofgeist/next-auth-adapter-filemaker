@@ -24,8 +24,8 @@ type FMUserModel = {
   image: string;
   email: string;
   emailVerified: string;
-  passwordHash?: string;
 };
+type FMUserModelWithPasswordHash = FMUserModel & { passwordHash: string };
 
 type FMAccountModel = {
   id: string;
@@ -62,6 +62,9 @@ type AdapterReturn<A extends DapiApiProps["adapter"]> = {
   updateUserCache: (user: User) => Promise<void>;
   typedClients: {
     user: ReturnType<typeof DataApi<any, FMUserModel, any, A>>;
+    userWithPasswordHash: ReturnType<
+      typeof DataApi<any, FMUserModelWithPasswordHash, any, A>
+    >;
     account: ReturnType<typeof DataApi<any, FMAccountModel, any, A>>;
     session: ReturnType<typeof DataApi<any, FMSessionModel, any, A>>;
     verificationToken: ReturnType<
@@ -438,6 +441,10 @@ export function FilemakerAdapter<A extends DapiApiProps["adapter"]>(
       user: DataApi<any, FMUserModel, any, A>({
         adapter: options.adapter,
         layout: layoutUser,
+      }),
+      userWithPasswordHash: DataApi<any, FMUserModelWithPasswordHash, any, A>({
+        adapter: options.adapter,
+        layout: `${layoutUser}_password`,
       }),
       account: DataApi<any, FMAccountModel, any, A>({
         adapter: options.adapter,

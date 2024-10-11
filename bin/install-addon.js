@@ -1,8 +1,12 @@
 import fs from "fs/promises";
 import path from "path";
 import os from "os";
+import { fileURLToPath } from "url";
 
-const sourceDir = path.join(process.cwd(), "addon");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const sourceDir = path.join(__dirname, "..", "addon");
 let targetDir;
 
 if (process.platform === "win32") {
@@ -53,6 +57,19 @@ async function installAddon() {
     } catch (error) {
       console.error(
         "FileMaker folder not found. Please make sure FileMaker is installed."
+      );
+      process.exit(1);
+    }
+
+    // Check if source directory exists
+    try {
+      await fs.access(sourceDir);
+    } catch (error) {
+      console.error(
+        `Error: The addon directory does not exist in ${sourceDir}`
+      );
+      console.error(
+        "This might be due to an incorrect installation or package structure."
       );
       process.exit(1);
     }
