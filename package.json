@@ -1,6 +1,6 @@
 {
   "name": "next-auth-adapter-filemaker",
-  "version": "3.0.0-beta.9",
+  "version": "3.0.0-beta.10",
   "private": false,
   "description": "next-auth Adapter for FileMaker Server",
   "main": "dist/index.js",

@@ -1,5 +1,11 @@
 ## 2.0.0
 
+## 3.0.0-beta.10
+
+### Patch Changes
+
+- Remove .fmaddon file (use just the directory)
+
 ## 3.0.0-beta.3
 
 ### Minor Changes
